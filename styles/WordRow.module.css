@@ -1,0 +1,5 @@
+.wordRow {
+  display: flex;
+  height: 62px;
+  column-gap: 5px;
+}

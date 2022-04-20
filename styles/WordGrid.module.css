@@ -1,0 +1,5 @@
+.wordGrid {
+  display: grid;
+  column-gap: 5px;
+  row-gap: 5px;
+}
