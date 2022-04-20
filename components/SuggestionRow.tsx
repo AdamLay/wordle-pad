@@ -20,7 +20,9 @@ export default function SuggestionRow() {
         if (correctLetter) return <LetterCell key={index} letter={correctLetter} />;
 
         // suggestions = present letters that are not in this index
-        const suggestions = presentLetters.filter((l) => l.index !== index);
+        const suggestions = Array.from(
+          new Set(presentLetters.filter((l) => l.index !== index).map((l) => l.value))
+        );
 
         return <LetterCell key={index} letter={{} as ILetter} suggestions={suggestions} />;
       })}

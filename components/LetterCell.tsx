@@ -4,7 +4,7 @@ import styles from "../styles/Letter.module.css";
 
 interface LetterCellProps {
   letter?: ILetter;
-  suggestions?: ILetter[];
+  suggestions?: string[];
 }
 
 export default function LetterCell({ letter, suggestions }: LetterCellProps) {
@@ -28,13 +28,12 @@ export default function LetterCell({ letter, suggestions }: LetterCellProps) {
   };
 
   return (
-    <div
-      className={`${styles.letter} ${getCssClass()}`}
-      onClick={() => toggleStatus()}
-    >
+    <div className={`${styles.letter} ${getCssClass()}`} onClick={() => toggleStatus()}>
       {letter?.value}
       {suggestions?.map((l, i) => (
-        <span key={i} className={styles.suggestion}>{l.value}</span>
+        <span key={i} className={styles.suggestion}>
+          {l}
+        </span>
       ))}
     </div>
   );
