@@ -11,7 +11,7 @@
   line-height: 20px;
   font-size: 32px;
   cursor: pointer;
-  writing-mode: vertical-lr;
+  flex-direction: column;
 }
 
 .letter:hover {
