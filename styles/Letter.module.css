@@ -8,9 +8,10 @@
   color: white;
   text-transform: uppercase;
   font-weight: 700;
-  line-height: 32px;
+  line-height: 20px;
   font-size: 32px;
   cursor: pointer;
+  writing-mode: vertical-lr;
 }
 
 .letter:hover {
