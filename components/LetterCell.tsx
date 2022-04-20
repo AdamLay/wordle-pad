@@ -33,8 +33,8 @@ export default function LetterCell({ letter, suggestions }: LetterCellProps) {
       onClick={() => toggleStatus()}
     >
       {letter?.value}
-      {suggestions?.map((l) => (
-        <span className={styles.suggestion}>{l.value}</span>
+      {suggestions?.map((l, i) => (
+        <span key={i} className={styles.suggestion}>{l.value}</span>
       ))}
     </div>
   );
