@@ -7,9 +7,8 @@ export interface AppState {
 const initialState: AppState = {
   words: [
     {
-      letters: [
-
-      ]
+      index: 0,
+      letters: []
     }
   ]
 };

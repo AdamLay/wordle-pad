@@ -10,13 +10,13 @@ interface LetterCellProps {
 export default function LetterCell({ letter, suggestions }: LetterCellProps) {
   const dispatch = useDispatch();
   const toggleStatus = () => {
-    if (letter.value) {
+    if (letter?.value) {
       dispatch(toggleLetterStatus({ wordIndex: letter.wordIndex, letterIndex: letter.index }));
     }
   };
 
   const getCssClass = () => {
-    switch (letter.status) {
+    switch (letter?.status) {
       case LetterStatus.Absent:
         return styles.absent;
       case LetterStatus.Present:
