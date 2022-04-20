@@ -19,9 +19,15 @@ export default function SuggestionRow() {
         const correctLetter = letters.find((l) => l.status === LetterStatus.Correct);
         if (correctLetter) return <LetterCell key={index} letter={correctLetter} />;
 
+        const cannotBe = presentLetters.filter((l) => l.index === index).map((l) => l.value);
+
         // suggestions = present letters that are not in this index
         const suggestions = Array.from(
-          new Set(presentLetters.filter((l) => l.index !== index).map((l) => l.value))
+          new Set(
+            presentLetters
+              .filter((l) => cannotBe.findIndex((x) => x === l.value) === -1)
+              .map((l) => l.value)
+          )
         );
 
         return <LetterCell key={index} letter={{} as ILetter} suggestions={suggestions} />;
