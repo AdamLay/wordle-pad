@@ -10,6 +10,11 @@
   font-weight: 700;
   line-height: 32px;
   font-size: 32px;
+  cursor: pointer;
+}
+
+.letter:hover {
+  transform: scale(1.1);
 }
 
 .pending {
