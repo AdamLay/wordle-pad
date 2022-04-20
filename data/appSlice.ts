@@ -37,13 +37,13 @@ export const appSlice = createSlice({
   reducers: {
     addLetter(state, action: PayloadAction<string>) {
       const lastWord = state.words.at(-1) as IWord;
-      const letter: ILetter = {
-        wordIndex: lastWord.index,
-        index: lastWord.letters.length,
-        value: action.payload
-      };
 
       if (lastWord.letters.length >= 5) {
+        const letter: ILetter = {
+          wordIndex: state.words.length,
+          index: 0,
+          value: action.payload
+        };
         state.words.push({
           index: state.words.length,
           letters: [
@@ -51,6 +51,11 @@ export const appSlice = createSlice({
           ]
         });
       } else {
+        const letter: ILetter = {
+          wordIndex: lastWord.index,
+          index: lastWord.letters.length,
+          value: action.payload
+        };
         lastWord.letters.push(letter);
 
         if (lastWord.letters.length === 5) {
